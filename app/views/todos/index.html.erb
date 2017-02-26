@@ -1,14 +1,21 @@
 <div ng-app="app">
-  <div ng-controller="todosCtrl">
-    <!-- {{ for(var i = 0; i < message.length; i++){
-      "<p>" message[i] "</p>"
-    }
-  }} -->
-  <p>{{ message[0] }}</p>
-  <!-- <p>{{ message[1] }}</p>
-  <p>{{ message[2] }}</p> -->
+    <div ng-controller="todosCtrl">
 
-  <input ng-model="message[0]" type="text" name="" value="">
+        <p>{{ message }}</p>
 
-  </div>
+        <input ng-model="message" type="text" name="" value="">
+
+        <div id="tasks">
+            <h3>Todo List:</h3>
+        <li ng-repeat="task in tasks">{{ task }}
+            <input ng-model="task" type="text" name="" value="">
+        </li>
+    </div>
+
+    <div>
+      <input ng-model = "newTask" type="text" name="" value="">
+      <button ng-click = "addTask(newTask)" type="button" name="button">Add a new task</button>
+    </div>
+
+</div>
 </div>

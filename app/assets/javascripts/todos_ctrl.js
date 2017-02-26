@@ -5,9 +5,14 @@ var todos = ["swipe the floor.","wash the dishes.","feed the cat"];
 
   angular.module("app").controller("todosCtrl", function($scope) {
 
-    // for(var i = 0; i < todos; i++){
-      $scope.message = todos;
-    // }
+      $scope.message = "hello world!";
+
+      $scope.tasks = todos;
+
+      $scope.addTask = function(newTask){
+        $scope.tasks.push(newTask);
+      };
+
       window.$scope = $scope;
 
       });
