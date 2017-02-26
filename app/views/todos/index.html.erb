@@ -1,3 +1,14 @@
 <div ng-app="app">
-  {{ 1 + 1 }}
+  <div ng-controller="todosCtrl">
+    <!-- {{ for(var i = 0; i < message.length; i++){
+      "<p>" message[i] "</p>"
+    }
+  }} -->
+  <p>{{ message[0] }}</p>
+  <!-- <p>{{ message[1] }}</p>
+  <p>{{ message[2] }}</p> -->
+
+  <input ng-model="message[0]" type="text" name="" value="">
+
+  </div>
 </div>
