@@ -1,19 +1,26 @@
-var todos = ["swipe the floor.","wash the dishes.","feed the cat"];
+var todos = ["swipe the floor.", "wash the dishes.", "feed the cat"];
 
 (function() {
-  "use strict";
+    "use strict";
 
-  angular.module("app").controller("todosCtrl", function($scope) {
+    angular.module("app").controller("todosCtrl", function($scope) {
 
-      $scope.message = "hello world!";
+        $scope.message = "hello world!";
 
-      $scope.tasks = todos;
+        $scope.tasks = todos;
 
-      $scope.addTask = function(newTask){
-        $scope.tasks.push(newTask);
-      };
+        $scope.addTask = function(newTask) {
+            if (newTask) {
+                $scope.tasks.push(newTask);
+                $scope.newTask = null;
+            }
+        };
 
-      window.$scope = $scope;
+        $scope.removeTask = function(index){
+          $scope.tasks.splice(index,1);
+        };
 
-      });
+        window.$scope = $scope;
+
+    });
 }());
